@@ -6,19 +6,23 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const projects = [
   {
+    id: "project-1",
     title: "Project Title 1",
     subtitle: "Brief description of the project and its impact.",
     image: "/project1.png",
   },
   {
+    id: "project-2",
     title: "Project Title 2",
     subtitle: "Brief description of the project and its impact.",
     image: "/project2.png",
   },
   {
+    id: "project-3",
     title: "Project Title 3",
     subtitle: "Brief description of the project and its impact.",
     image: "/project3.png",
@@ -34,8 +38,12 @@ export default function Projects() {
         transition={{ duration: 0.6 }}
         className="text-center mb-12"
       >
-        <h2 className="text-3xl md:text-4xl font-bold text-[#00e676]">Featured Projects</h2>
-        <p className="text-gray-400 mt-3">Discover our impactful work across various industries.</p>
+        <h2 className="text-3xl md:text-4xl font-bold text-[#00e676]">
+          Featured Projects
+        </h2>
+        <p className="text-gray-400 mt-3">
+          Discover our impactful work across various industries.
+        </p>
       </motion.div>
 
       <motion.div
@@ -57,18 +65,20 @@ export default function Projects() {
         >
           {projects.map((project, i) => (
             <SwiperSlide key={i}>
-              <motion.div
-                whileHover={{ scale: 1.03 }}
-                className="bg-[#1a1a1a] rounded-2xl overflow-hidden shadow-md border border-gray-800 cursor-pointer" 
-              >
-                <div className="h-48 bg-gray-800 flex items-center justify-center text-xl text-purple-400">
-                  {project.title}
-                </div>
-                <div className="p-4">
-                  <h3 className="font-semibold text-lg text-white">{project.title}</h3>
-                  <p className="text-sm text-gray-400 mt-1">{project.subtitle}</p>
-                </div>
-              </motion.div>
+              <Link href={`/projects/${project.id}`}>
+                <motion.div
+                  whileHover={{ scale: 1.03 }}
+                  className="bg-[#1a1a1a] rounded-2xl overflow-hidden shadow-md border border-gray-800 cursor-pointer"
+                >
+                  <div className="h-48 bg-gray-800 flex items-center justify-center text-xl text-purple-400">
+                    {project.title}
+                  </div>
+                  <div className="p-4">
+                    <h3 className="font-semibold text-lg text-white">{project.title}</h3>
+                    <p className="text-sm text-gray-400 mt-1">{project.subtitle}</p>
+                  </div>
+                </motion.div>
+              </Link>
             </SwiperSlide>
           ))}
         </Swiper>

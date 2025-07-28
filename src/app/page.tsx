@@ -23,9 +23,7 @@ export default function Home() {
       <div id="services" className="scroll-mt-20">
         <Services />
       </div>
-      <div id="projects" className="scroll-mt-20">
-        <Projects />
-      </div>
+      <Projects />
       <div id="testimonials" className="scroll-mt-20">
         <Testimonials />
       </div>

@@ -30,7 +30,7 @@ export default function Navbar() {
         className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between"
       >
         <Link href="/" className="flex items-center space-x-2">
-          <Image src="/favicon.jpg" alt="Nestnic Logo" width={48} height={48} />
+          <Image src="/favicon1.png" alt="Nestnic Logo" width={56} height={56} />
           <span className="text-[#00e676] font-bold text-lg dark:text-[#00b76d]">
             Nestnic Solutions
           </span>
@@ -40,7 +40,7 @@ export default function Navbar() {
           {[
             { href: "#", label: "Home" },
             { href: "#services", label: "Services" },
-            { href: "#projects", label: "Projects" },
+            { href: "/projects", label: "Projects" },
             { href: "#tech", label: "Technologies" },
             { href: "#blog", label: "Blog" },
             { href: "#about", label: "About Us" },
